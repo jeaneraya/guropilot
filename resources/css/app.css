@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+@import 'tailwindcss';
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+    --font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif;
+    
+    --color-guro-teal: #159A9C;
+    --color-guro-teal-dark: #0E7476;
+    --color-guro-mint: #DDF6EF;
+    --color-guro-lavender: #EEE9FF;
+    --color-guro-coral: #FDE9E7;
+    --color-guro-yellow: #FFF4D6;
+    --color-guro-bg: #F4F9F8;
+    --color-guro-border: #E5ECEB;
+    --color-guro-dark: #172033;
+    --color-guro-muted: #64748B;
+    --color-guro-subtle: #94A3B8;
+    --color-guro-success: #22A06B;
+}
+
+/* Global smooth transition for dark mode toggling */
+body, header, aside, main, div, button, span, p, h1, h2, h3, h4, input, select {
+    transition: background-color 200ms cubic-bezier(0.4, 0, 0.2, 1), border-color 200ms cubic-bezier(0.4, 0, 0.2, 1), color 200ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #F4F9F8;
+    color: #172033;
+    -webkit-font-smoothing: antialiased;
+}
+
+html.dark body {
+    background-color: #070D1E !important;
+    color: #F8FAFC !important;
+}
+
+/* Custom scrollbars */
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+::-webkit-scrollbar-thumb {
+    background: #CBD5E1;
+    border-radius: 9999px;
+}
+.dark ::-webkit-scrollbar-thumb {
+    background: #334155;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #94A3B8;
+}
+.dark ::-webkit-scrollbar-thumb:hover {
+    background: #475569;
+}
